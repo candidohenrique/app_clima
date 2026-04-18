@@ -12,6 +12,16 @@ document.getElementById('busca').addEventListener("submit", function (event) {
         .then(response => response.json())
         .then(data => {
             console.log(data);
+            const temperatura = Math.round(data.temperature);
+            const ventos = Math.round(data.windspeed);
+
+            document.getElementById('busca').style.display = 'none';
+            const climaInfo = document.getElementById('clima-info');
+            climaInfo.innerHTML = `
+                <p><strong>${cidade}</strong></p>
+                <p>Temperatura: ${temperatura}°C</p>
+                <p>Ventos: ${ventos} km/h</p>
+            `;
         })
         .catch(error => {
             console.error('Erro:', error);
