@@ -7,6 +7,12 @@
     <title>Clima App</title>
 </head>
 <body>
+    <form id="busca">
+        <label for="cidade">Cidade:</label>
+        <input type="text" id="cidade" name="cidade" required>
+        <button type="submit">Obter Clima</button>
+    </form>
+    <div id="clima-info"></div>
     <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
 </body>
 </html>
